@@ -1,9 +1,9 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Pretendard', sans-serif; /* 더 현대적인 폰트로 변경 */
+    background-color: #121212; /* 다크 모드 배경 */
+    color: #e0e0e0; /* 다크 모드 기본 텍스트 색상 */
     display: flex;
-    flex-direction: column; /* Allow body to stack items vertically */
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
@@ -12,26 +12,29 @@ body {
 }
 
 .container {
-    background-color: #fff;
-    padding: 2em;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 90%;
-    margin-bottom: 2em; /* Add space between containers */
+    background-color: #1e1e1e; /* 컨테이너 배경색 */
+    padding: 2.5em;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    width: 95%;
+    margin-bottom: 2em;
+    border: 1px solid #333; /* 컨테이너 테두리 */
 }
 
 h1, h2 {
-    font-size: 1.8em;
-    color: #0a2540;
+    font-size: 2em;
+    color: #ffffff;
     text-align: center;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.8em;
+    font-weight: 600;
 }
 
 p {
     text-align: center;
     margin-bottom: 2em;
-    color: #555;
+    color: #a0a0a0; /* 문단 텍스트 색상 */
+    line-height: 1.6;
 }
 
 form {
@@ -40,51 +43,64 @@ form {
 }
 
 label {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.7em;
     font-weight: bold;
+    color: #c0c0c0; /* 라벨 색상 */
 }
 
 input,
 textarea {
-    padding: 0.8em;
+    padding: 1em;
     margin-bottom: 1.5em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #444;
+    border-radius: 6px;
     font-size: 1em;
+    background-color: #2c2c2c; /* 입력 필드 배경색 */
+    color: #e0e0e0; /* 입력 필드 텍스트 색상 */
 }
 
 input:focus,
 textarea:focus {
-    border-color: #007bff;
+    border-color: #4a90e2; /* 포커스 시 테두리 색상 */
     outline: none;
 }
 
 button {
-    background-color: #007bff;
+    background-color: #4a90e2; /* 창의적인 느낌의 파란색 버튼 */
     color: #fff;
-    padding: 0.9em;
+    padding: 1em;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     font-size: 1.1em;
+    font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #357abd; /* 호버 시 버튼 색상 */
+    transform: translateY(-2px); /* 호버 시 살짝 떠오르는 효과 */
 }
 
 #comments {
-    margin-top: 2em; /* Add space above the comments section */
+    margin-bottom: 2em; /* 댓글 섹션과 아래 컨테이너 사이 간격 */
 }
 
 footer {
     text-align: center;
     color: #777;
     font-size: 0.9em;
-    margin-top: 2em;
+    margin-top: auto; /* 푸터를 항상 아래쪽에 위치시킴 */
+    padding-top: 2em;
 }
 
 footer p {
     margin: 0.5em 0;
+}
+
+/* Disqus 다크모드 대응 */
+#disqus_thread {
+    background-color: #1e1e1e;
+    padding: 1em;
+    border-radius: 12px;
 }

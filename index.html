@@ -3,29 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partnership Inquiry & Comments</title>
+    <title>창의고등학교 커뮤니티</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>League of Legends Partnership Inquiry</h1>
-        <p>If you are interested in a partnership, please fill out the form below.</p>
-        <form action="https://formspree.io/f/mbdazqnb" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="nickname">Nickname:</label>
-            <input type="text" id="nickname" name="nickname" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5" required></textarea>
-
-            <button type="submit">Send</button>
-        </form>
-    </div>
 
     <div id="comments" class="container">
-        <h2>Comments</h2>
+        <h2>자유롭게 이야기해요</h2>
         <div id="disqus_thread"></div>
         <script>
             /**
@@ -47,8 +31,26 @@
         <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     </div>
 
+    <div class="container">
+        <h1>창의고등학교 커뮤니티</h1>
+        <p>친구들에게 하고 싶은 말이 있다면, 아래 폼을 통해 메시지를 남겨주세요!</p>
+        <form action="https://formspree.io/f/mbdazqnb" method="POST">
+            <label for="name">이름:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="nickname">닉네임:</label>
+            <input type="text" id="nickname" name="nickname" required>
+
+            <label for="message">메시지:</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">전송</button>
+        </form>
+    </div>
+
     <footer>
-        <p>Created by Goryun Go, a sophomore in the Department of Computer Engineering at Hoseo University.</p>
+        <p>Created by Goryun Go, a proud graduate of Chang-ui High School.</p>
+        <p>Currently a sophomore in the Department of Computer Engineering at Hoseo University.</p>
     </footer>
 
     <script src="main.js"></script>
