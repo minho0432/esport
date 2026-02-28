@@ -1,126 +1,110 @@
 :root {
-    --bg-dark: #0f111a;
-    --card-bg: #1a1d2e;
-    --accent-blue: #00d2ff;
-    --text-white: #ffffff;
-    --text-gray: #aab0c6;
+    --bg-white: #ffffff;
+    --kespa-blue: #004696;
+    --text-black: #1a1a1a;
+    --text-gray: #666666;
+    --border-light: #eeeeee;
 }
 
 body {
-    background-color: var(--bg-dark);
-    color: var(--text-white);
+    background-color: #f8f9fa;
+    color: var(--text-black);
     font-family: 'Pretendard', sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .container {
-    max-width: 900px;
+    max-width: 700px;
     margin: 0 auto;
-    padding: 60px 20px;
+    padding: 40px 20px;
+    background: white;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
 }
 
-/* 상단 KeSPA 로고 및 타이틀 */
+/* KeSPA 로고 크게 */
 header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid var(--kespa-blue);
 }
 
 .kespa-logo img {
-    height: 40px;
+    width: 200px; /* 기존보다 훨씬 크게 */
+    height: auto;
     margin-bottom: 20px;
-    filter: drop-shadow(0 0 5px var(--accent-blue));
 }
 
 header h1 {
-    font-size: 2.2rem;
-    font-weight: 800;
-    letter-spacing: -1px;
+    font-size: 1.8rem;
+    margin: 0;
+    color: var(--kespa-blue);
 }
 
-/* 1, 2, 3 섹션 */
-.tier-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+/* 섹션 통합 및 이미지 축소 */
+.main-content {
+    padding: 20px 0;
 }
 
-.tier-section {
-    background: var(--card-bg);
-    border-radius: 16px;
-    padding: 40px;
+.section-card {
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.3s;
+    padding: 30px 0;
 }
 
-.tier-section:hover {
-    transform: translateY(-5px);
-    border-color: var(--accent-blue);
+.number-badge {
+    display: inline-block;
+    background: var(--kespa-blue);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 800;
+    margin-bottom: 15px;
 }
 
-.number {
-    position: absolute;
-    top: -20px;
-    left: 20px;
-    background: var(--accent-blue);
-    color: var(--bg-dark);
-    font-weight: 900;
-    font-size: 1.5rem;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
-}
-
-.tier-section h2 {
-    font-size: 1.6rem;
+.section-card h2 {
+    font-size: 1.4rem;
+    margin-top: 0;
     margin-bottom: 20px;
-    color: var(--accent-blue);
 }
 
-.image-box {
-    width: 100%;
-    background: #000;
+/* 이미지 박스: 아주 작고 깔끔하게 */
+.image-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.image-row img {
+    width: 180px; /* 아주 작게 축소 */
+    height: auto;
     border-radius: 8px;
-    overflow: hidden;
-    margin-bottom: 25px;
-    border: 1px solid #333;
+    border: 1px solid var(--border-light);
 }
 
-.image-box img {
-    width: 100%;
-    display: block;
-}
-
-.tier-section p {
-    font-size: 1.1rem;
+.section-card p {
+    font-size: 1rem;
     color: var(--text-gray);
     margin: 0;
-}
-
-.empty .image-box {
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.02);
-    border: 2px dashed #444;
 }
 
 footer {
     text-align: center;
     margin-top: 80px;
-    padding-bottom: 40px;
-    color: #444;
-    font-size: 0.9rem;
+    padding-top: 30px;
+    border-top: 1px solid var(--border-light);
 }
 
-@media (max-width: 600px) {
-    header h1 { font-size: 1.8rem; }
-    .tier-section { padding: 30px 20px; }
+.student-info {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--kespa-blue);
+    margin-bottom: 10px;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: #999;
 }
