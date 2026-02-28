@@ -1,106 +1,145 @@
 body {
-    background-color: #0f172a;
-    color: #f1f5f9;
+    background-color: #020617;
+    color: #e2e8f0;
     font-family: 'Pretendard', sans-serif;
     margin: 0;
     padding: 40px 20px;
-    display: flex;
-    justify-content: center;
+    background-image: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #020617 100%);
     min-height: 100vh;
 }
 
 .container {
     width: 100%;
-    max-width: 900px;
-    background-color: #1e293b;
-    border-radius: 16px;
-    padding: 40px;
-    box-shadow: 0 10px 50px rgba(0, 0, 0, 0.5);
-    border: 1px solid #334155;
+    max-width: 850px;
+    margin: 0 auto;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 50px;
+    border: 1px solid #312e81;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.7), inset 0 0 20px rgba(79, 70, 229, 0.1);
 }
 
 header h1 {
     text-align: center;
-    color: #38bdf8;
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    letter-spacing: -0.02em;
+    color: #818cf8;
+    font-size: 2.8em;
+    margin-bottom: 50px;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px rgba(129, 140, 248, 0.5);
 }
 
 .profile-card {
-    text-align: center;
-    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
 }
 
 .profile-card img {
-    width: 150px;
-    height: 150px;
+    width: 140px;
+    height: 140px;
     border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #38bdf8;
-    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+    border: 3px solid #6366f1;
+    padding: 5px;
+    background: #0f172a;
+    box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
+    margin-bottom: 20px;
+}
+
+.kespa-badge {
+    width: 100px !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    opacity: 0.8;
 }
 
 .content-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 24px;
-    margin-bottom: 40px;
+    gap: 30px;
 }
 
 section h2 {
-    color: #38bdf8;
-    font-size: 1.5em;
+    color: #c7d2fe;
+    font-size: 1.4em;
     margin-bottom: 20px;
-    border-bottom: 2px solid #334155;
-    padding-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+section h2::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 18px;
+    background: #6366f1;
 }
 
 .card {
-    background-color: #334155;
+    background: #1e293b;
     border-radius: 12px;
-    padding: 24px;
-    height: 100%;
-    transition: transform 0.2s ease;
+    padding: 25px;
+    border: 1px solid #334155;
+    transition: all 0.3s ease;
 }
 
 .card:hover {
+    border-color: #6366f1;
     transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
 .card h3 {
-    margin-top: 0;
-    font-size: 1.2em;
     color: #f8fafc;
+    margin-top: 0;
+    font-size: 1.25em;
+    margin-bottom: 12px;
 }
 
 .card p {
+    color: #94a3b8;
+    line-height: 1.7;
     font-size: 0.95em;
-    line-height: 1.6;
-    color: #cbd5e1;
     margin-bottom: 0;
 }
 
-.game-card img {
-    width: 100%;
-    max-width: 300px;
-    border-radius: 8px;
-    display: block;
-    margin: 15px auto 0;
+.game-images {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.game-images img {
+    width: 45%;
+    border-radius: 6px;
     border: 1px solid #475569;
+    transition: transform 0.2s;
+}
+
+.game-images img:hover {
+    transform: scale(1.05);
 }
 
 footer {
     text-align: center;
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #334155;
-    color: #94a3b8;
+    margin-top: 60px;
+    color: #6366f1;
+    font-weight: 600;
     font-size: 0.9em;
+    letter-spacing: 1px;
 }
 
 @media (max-width: 768px) {
     .content-grid {
         grid-template-columns: 1fr;
+    }
+    .container {
+        padding: 30px 20px;
     }
 }
