@@ -20,7 +20,6 @@ body {
     background-attachment: fixed;
 }
 
-/* 환영 오버레이 */
 #welcome-overlay {
     position: fixed;
     top: 0;
@@ -67,10 +66,9 @@ header {
     margin-bottom: 60px;
 }
 
-/* KeSPA 로고 둥실둥실 효과 */
 .kespa-logo img {
     width: 80px;
-    filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.4));
+    filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.3));
     animation: float 4s ease-in-out infinite;
 }
 
@@ -79,7 +77,6 @@ header {
     50% { transform: translateY(-12px); }
 }
 
-/* 타이틀 네온 반짝임 효과 */
 header h1 {
     font-size: 2rem;
     margin: 0;
@@ -87,16 +84,13 @@ header h1 {
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 1px;
-    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5), 0 0 20px rgba(0, 210, 255, 0.2);
+    text-shadow: 0 0 15px var(--kespa-blue);
     animation: neon-blink 2s linear infinite;
 }
 
 @keyframes neon-blink {
-    0%, 100% { opacity: 1; text-shadow: 0 0 15px var(--kespa-blue); }
-    50% { opacity: 0.8; text-shadow: 0 0 5px var(--kespa-blue); }
-    92% { opacity: 1; }
-    93% { opacity: 0.6; }
-    94% { opacity: 1; }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.8; }
 }
 
 .dashboard {
@@ -136,10 +130,31 @@ header h1 {
 .section-card:hover {
     transform: translateY(-5px);
     border-color: var(--kespa-blue);
-    box-shadow: 0 0 30px rgba(0, 210, 255, 0.2);
 }
 
-/* 이미지 둥실둥실 효과 재적용 */
+.number-badge {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: var(--kespa-blue);
+    font-weight: 900;
+    opacity: 0.1;
+    font-size: 3rem;
+}
+
+.section-card h2 {
+    font-size: 1.3rem;
+    margin: 0 0 20px 0;
+    color: #fff;
+    border-left: 4px solid var(--kespa-blue);
+    padding-left: 12px;
+}
+
+.image-row {
+    display: flex;
+    gap: 15px;
+}
+
 .image-row img {
     width: calc(50% - 10px);
     max-width: 220px;
@@ -149,31 +164,28 @@ header h1 {
     transition: 0.3s;
 }
 
-.image-row img:nth-child(2) {
-    animation-delay: 1s;
-}
-
 @keyframes image-float {
-    0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-8px) rotate(1deg); }
-}
-
-.image-row img:hover {
-    animation-play-state: paused;
-    transform: scale(1.05);
-    border-color: var(--kespa-blue);
-    z-index: 10;
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
 }
 
 .skill-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
+    margin-bottom: 20px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .skill-item img {
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     margin-bottom: 8px;
     transition: 0.3s;
 }
@@ -181,6 +193,32 @@ header h1 {
 .skill-item:hover img {
     transform: scale(1.2) rotate(5deg);
     filter: drop-shadow(0 0 10px var(--kespa-blue));
+}
+
+.skill-item strong {
+    font-size: 0.75rem;
+    color: var(--kespa-blue);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.skill-item span {
+    font-size: 0.85rem;
+    color: #fff;
+    font-weight: 500;
+}
+
+.aspiration-text {
+    font-size: 0.95rem;
+    color: #aab0c6;
+    line-height: 1.6;
+    background: rgba(0, 210, 255, 0.05);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-style: italic;
+    border: 1px solid rgba(0, 210, 255, 0.1);
+    word-break: keep-all;
 }
 
 .section-card p {
@@ -203,8 +241,7 @@ header h1 {
 }
 
 .work-item { padding: 15px; text-align: center; }
-.design-img { width: 100%; height: 90px; object-fit: contain; opacity: 0.7; transition: 0.3s; }
-.section-card:hover .design-img { opacity: 1; }
+.design-img { width: 100%; height: 90px; object-fit: contain; }
 
 .main-info { grid-row: span 2; }
 
@@ -214,12 +251,11 @@ footer {
     margin-top: 60px;
     padding: 25px 0;
     border-top: 1px solid #222;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: #475569;
 }
 
 @media (max-width: 900px) {
     .dashboard { grid-template-columns: 1fr; }
     .main-info { grid-row: auto; }
-    header h1 { font-size: 1.5rem; }
 }
