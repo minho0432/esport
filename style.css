@@ -48,13 +48,29 @@ header h1 {
     margin-bottom: 20px;
 }
 
+.badges {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
 .kespa-badge {
-    width: 100px !important;
+    width: 80px !important;
     height: auto !important;
     border-radius: 0 !important;
     border: none !important;
     box-shadow: none !important;
     opacity: 0.8;
+}
+
+.hknu-badge {
+    width: 150px !important;
+    height: auto !important;
+    border-radius: 0 !important;
+    border: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
 }
 
 .content-grid {
