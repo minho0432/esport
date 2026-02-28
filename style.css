@@ -50,27 +50,41 @@ header h1 {
 
 .badges {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
     justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 15px 30px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .kespa-badge {
-    width: 80px !important;
+    width: 70px !important;
     height: auto !important;
     border-radius: 0 !important;
     border: none !important;
     box-shadow: none !important;
-    opacity: 0.8;
+    opacity: 0.9;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+    transition: all 0.3s ease;
 }
 
 .hknu-badge {
-    width: 150px !important;
+    width: 130px !important;
     height: auto !important;
     border-radius: 0 !important;
     border: none !important;
     box-shadow: none !important;
     background: transparent !important;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+    transition: all 0.3s ease;
+}
+
+.kespa-badge:hover, .hknu-badge:hover {
+    opacity: 1;
+    filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.5));
+    transform: scale(1.05);
 }
 
 .content-grid {
