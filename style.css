@@ -1,76 +1,99 @@
 :root {
-    --bg-white: #ffffff;
-    --kespa-blue: #004696;
-    --text-black: #1a1a1a;
-    --text-gray: #666666;
-    --border-light: #eeeeee;
+    --bg-dark: #050508;
+    --kespa-blue: #00d2ff;
+    --val-red: #ff4655;
+    --gold: #fbc02d;
+    --platinum: #4db6ac;
+    --radiant: #ffeb3b;
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 body {
-    background-color: #f8f9fa;
-    color: var(--text-black);
+    background-color: var(--bg-dark);
+    color: #ffffff;
     font-family: 'Pretendard', sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.5;
+    overflow-x: hidden;
+    /* 배경에 은은한 움직이는 빛 효과 */
+    background-image: 
+        radial-gradient(circle at 20% 30%, rgba(0, 210, 255, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(255, 70, 85, 0.05) 0%, transparent 50%);
 }
 
 .container {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 40px 20px;
-    background: white;
-    min-height: 100vh;
-    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    padding: 60px 20px;
 }
 
-/* KeSPA 로고 크게 */
 header {
     text-align: center;
-    margin-bottom: 50px;
-    padding-bottom: 30px;
-    border-bottom: 2px solid var(--kespa-blue);
+    margin-bottom: 80px;
 }
 
 .kespa-logo img {
-    width: 200px; /* 기존보다 훨씬 크게 */
-    height: auto;
-    margin-bottom: 20px;
+    width: 220px;
+    filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.4));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 header h1 {
-    font-size: 1.8rem;
-    margin: 0;
-    color: var(--kespa-blue);
+    font-size: 2.2rem;
+    margin-top: 20px;
+    background: linear-gradient(to right, #00d2ff, #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
-/* 섹션 통합 및 이미지 축소 */
-.main-content {
-    padding: 20px 0;
-}
-
+/* 카드 스타일: 글래스모피즘 */
 .section-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 40px;
+    margin-bottom: 40px;
     position: relative;
-    padding: 30px 0;
+    transition: all 0.3s ease;
+}
+
+.section-card:hover {
+    border-color: var(--kespa-blue);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 210, 255, 0.15);
 }
 
 .number-badge {
-    display: inline-block;
+    position: absolute;
+    top: -15px;
+    left: 30px;
     background: var(--kespa-blue);
-    color: white;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-weight: 800;
-    margin-bottom: 15px;
+    color: #000;
+    font-weight: 900;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 15px var(--kespa-blue);
 }
 
 .section-card h2 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
     margin-top: 0;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    color: var(--kespa-blue);
 }
 
-/* 이미지 박스: 아주 작고 깔끔하게 */
+/* 이미지 박스: 깔끔한 비율 유지 */
 .image-row {
     display: flex;
     gap: 15px;
@@ -78,33 +101,58 @@ header h1 {
 }
 
 .image-row img {
-    width: 180px; /* 아주 작게 축소 */
-    height: auto;
+    width: 180px;
     border-radius: 8px;
-    border: 1px solid var(--border-light);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.section-card p {
-    font-size: 1rem;
-    color: var(--text-gray);
-    margin: 0;
+/* 티어 스킬 레이아웃 */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.skill-item img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.2));
+}
+
+.skill-item span {
+    display: block;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.skill-item strong {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+/* 빈 칸 스타일 */
+.empty-card {
+    border: 1px dashed #333;
+    opacity: 0.5;
 }
 
 footer {
     text-align: center;
-    margin-top: 80px;
-    padding-top: 30px;
-    border-top: 1px solid var(--border-light);
+    margin-top: 100px;
+    padding: 40px;
+    border-top: 1px solid #222;
 }
 
 .student-info {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: var(--kespa-blue);
     margin-bottom: 10px;
 }
 
-.copyright {
-    font-size: 0.85rem;
-    color: #999;
+@media (max-width: 600px) {
+    .image-row { flex-direction: column; }
+    .skill-grid { grid-template-columns: 1fr; }
 }
