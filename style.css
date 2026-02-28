@@ -65,16 +65,27 @@ header {
     gap: 30px;
     margin-bottom: 60px;
 }
-
+/* KeSPA 로고 크기 및 화려한 효과 강화 */
 .kespa-logo img {
-    width: 80px;
-    filter: drop-shadow(0 0 10px rgba(0, 210, 255, 0.3));
-    animation: float 4s ease-in-out infinite;
+    width: 110px; /* 80px에서 110px로 확대 */
+    filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.6));
+    animation: float 4s ease-in-out infinite, logo-glow 2s ease-in-out infinite;
+    transition: 0.3s;
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-15px) rotate(2deg); }
+}
+
+@keyframes logo-glow {
+    0%, 100% { filter: drop-shadow(0 0 15px rgba(0, 210, 255, 0.6)); }
+    50% { filter: drop-shadow(0 0 30px rgba(0, 210, 255, 0.9)) brightness(1.2); }
+}
+
+.kespa-logo img:hover {
+    width: 120px;
+    filter: drop-shadow(0 0 40px rgba(0, 210, 255, 1));
 }
 
 header h1 {
